@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:viajes_app/screens/review.dart';
 
 //staless
 class DescriptionPlaceScreen extends StatelessWidget {
@@ -66,6 +67,7 @@ class DescriptionPlaceScreen extends StatelessWidget {
       children: [
         titleAndStars,
         description,
+        const Review(),
       ],
     );
   }
