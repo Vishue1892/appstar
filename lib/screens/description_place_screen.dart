@@ -4,7 +4,14 @@ import 'package:viajes_app/screens/review.dart';
 
 //staless
 class DescriptionPlaceScreen extends StatelessWidget {
-  const DescriptionPlaceScreen({super.key});
+  final String namePlace;
+  final String descriptionPlace;
+  final int stars;
+  const DescriptionPlaceScreen(
+      {super.key,
+      required this.namePlace,
+      required this.descriptionPlace,
+      required this.stars});
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +19,6 @@ class DescriptionPlaceScreen extends StatelessWidget {
       fontSize: 30.0,
       fontWeight: FontWeight.bold,
     );
-    const descriptionText =
-        ' Occaecat occaecat consequat excepteur aute ipsum magna excepteur consequat in aute. Dolor mollit magna magna ea aute id. Exercitation dolor laboris esse Lorem dolor deserunt labore tempor non occaecat dolor elit adipisicing. Qui excepteur nisi officia elit ea exercitation reprehenderit. Eiusmod eiusmod labore nulla sint ea Lorem nulla non.\n\n Nisi deserunt ullamco laborum et aute irure. Et pariatur aute do ipsum duis consequat ad qui ipsum nulla amet duis labore. Et eiusmod aute pariatur quis minim do nulla consequat consequat minim occaecat dolore voluptate nostrud.';
 
     final star = Container(
       margin: const EdgeInsets.only(
@@ -34,8 +39,8 @@ class DescriptionPlaceScreen extends StatelessWidget {
             left: 20.0,
             right: 20.0,
           ),
-          child: const Text(
-            "Duwili Ella",
+          child: Text(
+            namePlace,
             style: titleStyle,
             textAlign: TextAlign.left,
           ),
@@ -54,7 +59,7 @@ class DescriptionPlaceScreen extends StatelessWidget {
         right: 20.0,
       ),
       child: Text(
-        descriptionText,
+        descriptionPlace,
         style: GoogleFonts.lato(
           textStyle: const TextStyle(
             fontSize: 16,
@@ -67,7 +72,6 @@ class DescriptionPlaceScreen extends StatelessWidget {
       children: [
         titleAndStars,
         description,
-        const Review(),
       ],
     );
   }

@@ -21,3 +21,6 @@ flutter:
 
   assets:
     - assets/img/victor.jpg
+    - assets/img/emma.jpg
+    - assets/img/dani.jpg
+    - assets/img/matt.jpg

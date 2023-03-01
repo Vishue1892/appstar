@@ -1,14 +1,24 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Review extends StatelessWidget {
-  final String pathProfile = 'assets/img/victor.jpg';
-  const Review({super.key});
+  final String pathProfile;
+  final String user;
+  final String details;
+  final String comments;
+
+  const Review(
+      {super.key,
+      required this.pathProfile,
+      required this.user,
+      required this.details,
+      required this.comments});
 
   @override
   Widget build(BuildContext context) {
     final profilePic = Container(
       margin: const EdgeInsets.only(
-        top: 20.0,
+        top: 50.0,
         left: 20.0,
       ),
       width: 80.0,
@@ -21,6 +31,79 @@ class Review extends StatelessWidget {
         ),
       ),
     );
-    return profilePic;
+
+    final userName = Container(
+      margin: const EdgeInsets.only(
+        left: 20.0,
+      ),
+      child: Text(
+        user,
+        textAlign: TextAlign.left,
+        style: GoogleFonts.lato(
+          fontSize: 17.0,
+          fontWeight: FontWeight.bold,
+        ),
+      ),
+    );
+
+    final star = Container(
+      margin: const EdgeInsets.only(
+        right: 3.0,
+      ),
+      child: const Icon(
+        Icons.star,
+        color: Colors.amber,
+      ),
+    );
+
+    final userInfo = Container(
+      margin: const EdgeInsets.only(
+        left: 20.0,
+      ),
+      child: Row(
+        children: [
+          Text(
+            details,
+            textAlign: TextAlign.left,
+            style: GoogleFonts.lato(
+                fontSize: 14.0,
+                color: const Color.fromARGB(255, 157, 182, 195)),
+          ),
+          star,
+          star,
+          star,
+        ],
+      ),
+    );
+
+    final userComments = Container(
+      margin: const EdgeInsets.only(
+        left: 20.0,
+      ),
+      child: Text(
+        comments,
+        textAlign: TextAlign.left,
+        style: GoogleFonts.lato(
+          fontSize: 14.0,
+        ),
+      ),
+    );
+
+    final userDetails = Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
+      children: [
+        userName,
+        userInfo,
+        userComments,
+      ],
+    );
+
+    return Row(
+      children: [
+        profilePic,
+        userDetails,
+      ],
+    );
   }
 }
