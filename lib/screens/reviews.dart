@@ -11,7 +11,7 @@ class Reviews extends StatelessWidget {
       children: [
         Review(
           pathProfile: 'assets/img/dani.jpg',
-          user: 'Filomeno Costa',
+          user: 'Nadia Garcia',
           details: '1 review, 5 photos',
           comments: 'This is an amazing place in Sri Lanka',
         ),
@@ -31,7 +31,7 @@ class Reviews extends StatelessWidget {
           pathProfile: 'assets/img/victor.jpg',
           user: 'Marco Cardenas',
           details: '4 review, 1 photos',
-          comments: 'Start wide, expand further, and never look back',
+          comments: 'Start wide, expand further',
         ),
       ],
     );
