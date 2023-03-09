@@ -34,7 +34,7 @@ class CardImage extends StatelessWidget {
       alignment: const Alignment(0.9, 1.1),
       children: [
         card,
-        SmallButton(),
+        const SmallButton(),
       ],
     );
   }
